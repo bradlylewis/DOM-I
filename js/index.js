@@ -38,8 +38,13 @@ const siteContent = {
 };
 
 let header = document.querySelector("nav");
+let topTitle = document.querySelectorAll('.main-content .top-content h4')
+let topText = document.querySelectorAll('.main-content .top-content p');
+let bottomTitle = document.querySelectorAll('.main-content .bottom-content h4');
+let bottomText = document.querySelectorAll('.main-content .bottom-content p');
 
 // Example: Update the img src for the logo
+// Add images
 let logo = document.querySelector('#logo-img')
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
@@ -49,12 +54,12 @@ bigCircle.setAttribute('src', siteContent['cta']['img-src']);
 const banner = document.querySelector('#middle-img');
 banner.setAttribute('src', siteContent['main-content']['middle-img-src']);
 
-// NAV section
 
+// #### NAV section ####
 const links = document.querySelectorAll("header nav a");
 links.forEach((link, index) => link.textContent = siteContent.nav[`nav-item-${index + 1}`]);
 
-// #### Add new content ####
+// Add new content 
 // Change the color of the navigation text to be green.
 links.forEach(function(element){
   element.style.color = "green";
@@ -70,3 +75,36 @@ let link2 = document.createElement("a");
 link2.textContent = "Red ";
 link2.style.color = "Red";
 header.prepend(link2);
+
+
+// #### CTA Section ####
+// Title
+let mainTitle = document.querySelector("h1");
+mainTitle.innerHTML ="DOM <br> IS<br>AWESOME";
+
+// Button
+mainButton = document.querySelector(".cta-text button");
+mainButton.textContent = siteContent["cta"]["button"];
+
+
+// #### Main Content ####
+// Top Section
+// Titles
+topTitle[0].textContent=siteContent['main-content']['features-h4'];
+topTitle[1].textContent=siteContent['main-content']['about-h4'];
+
+// Paragraphs
+topText[0].textContent=siteContent['main-content']['features-content'];
+topText[1].textContent=siteContent['main-content']['about-content'];
+
+
+// Bottom Content
+// Titles
+bottomTitle[0].textContent = siteContent['main-content']['services-h4'];
+bottomTitle[1].textContent = siteContent['main-content']['product-h4'];
+bottomTitle[2].textContent = siteContent['main-content']['vision-h4'];
+
+// Paragraphs
+bottomText[0].textContent = siteContent['main-content']['services-content'];
+bottomText[1].textContent = siteContent['main-content']['product-content'];
+bottomText[2].textContent = siteContent['main-content']['vision-content'];
