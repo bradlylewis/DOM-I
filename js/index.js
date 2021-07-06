@@ -37,6 +37,8 @@ const siteContent = {
   },
 };
 
+let header = document.querySelector("nav");
+
 // Example: Update the img src for the logo
 let logo = document.querySelector('#logo-img')
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -47,20 +49,24 @@ bigCircle.setAttribute('src', siteContent['cta']['img-src']);
 const banner = document.querySelector('#middle-img');
 banner.setAttribute('src', siteContent['main-content']['middle-img-src']);
 
-// nav section
-
+// NAV section
 
 const links = document.querySelectorAll("header nav a");
 links.forEach((link, index) => link.textContent = siteContent.nav[`nav-item-${index + 1}`]);
 
+// #### Add new content ####
+// Change the color of the navigation text to be green.
+links.forEach(function(element){
+  element.style.color = "green";
+})
 
+// Add two new items to the navigation system
+let link1 = document.createElement("a");
+link1.textContent = "Gold ";
+link1.style.color = "gold";
+header.append(link1);
 
-
-
-// navigation
-// let i = 0;
-
-// while(i < links.length){
-//   links[i].textContent=siteContent.nav[`nav-item-${i + 1}`];
-//    i++;
-// }
+let link2 = document.createElement("a");
+link2.textContent = "Red ";
+link2.style.color = "Red";
+header.prepend(link2);
