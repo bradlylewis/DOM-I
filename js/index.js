@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street<br>Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -37,11 +37,14 @@ const siteContent = {
   },
 };
 
-let header = document.querySelector("nav");
-let topTitle = document.querySelectorAll('.main-content .top-content h4')
-let topText = document.querySelectorAll('.main-content .top-content p');
-let bottomTitle = document.querySelectorAll('.main-content .bottom-content h4');
-let bottomText = document.querySelectorAll('.main-content .bottom-content p');
+const header = document.querySelector("nav");
+const topTitle = document.querySelectorAll('.main-content .top-content h4')
+const topText = document.querySelectorAll('.main-content .top-content p');
+const bottomTitle = document.querySelectorAll('.main-content .bottom-content h4');
+const bottomText = document.querySelectorAll('.main-content .bottom-content p');
+const contactTitle = document.querySelector('.contact h4');
+const contactText = document.querySelectorAll('.contact p');
+const footer = document.querySelector("footer p");
 
 // Example: Update the img src for the logo
 // Add images
@@ -66,12 +69,12 @@ links.forEach(function(element){
 })
 
 // Add two new items to the navigation system
-let link1 = document.createElement("a");
+const link1 = document.createElement("a");
 link1.textContent = "Gold ";
 link1.style.color = "gold";
 header.append(link1);
 
-let link2 = document.createElement("a");
+const link2 = document.createElement("a");
 link2.textContent = "Red ";
 link2.style.color = "Red";
 header.prepend(link2);
@@ -79,11 +82,11 @@ header.prepend(link2);
 
 // #### CTA Section ####
 // Title
-let mainTitle = document.querySelector("h1");
-mainTitle.innerHTML ="DOM <br> IS<br>AWESOME";
+const mainTitle = document.querySelector("h1");
+mainTitle.innerHTML = "DOM <br> IS<br>AWESOME";
 
 // Button
-mainButton = document.querySelector(".cta-text button");
+const mainButton = document.querySelector(".cta-text button");
 mainButton.textContent = siteContent["cta"]["button"];
 
 
@@ -108,3 +111,18 @@ bottomTitle[2].textContent = siteContent['main-content']['vision-h4'];
 bottomText[0].textContent = siteContent['main-content']['services-content'];
 bottomText[1].textContent = siteContent['main-content']['product-content'];
 bottomText[2].textContent = siteContent['main-content']['vision-content'];
+
+
+// #### Contact Section ####
+// Title
+contactTitle.textContent = siteContent['contact']['contact-h4'];
+
+// link text
+contactText[0].innerHTML = siteContent['contact']['address'];
+contactText[1].innerHTML = siteContent['contact']['phone'];
+contactText[2].innerHTML = siteContent['contact']['email'];
+
+
+// #### Footer Section ####
+// Copyright
+footer.textContent = siteContent['footer']['copyright'];
