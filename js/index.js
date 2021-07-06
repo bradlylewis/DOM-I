@@ -38,25 +38,20 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-// let logo = document.getElementById("logo-img");
+let logo = document.querySelector('#logo-img')
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-// Task 2a:
-// Create selectors to point your data into elements
+const bigCircle = document.querySelector('#cta-img');
+bigCircle.setAttribute('src', siteContent['cta']['img-src']);
 
-const header = document.querySelector('header')
-const links = header.querySelectorAll('nav a')
-const logo = header.querySelector('#logo-img')
-const ctaTitle = document.querySelector('.cta.cta-text h1')
-const ctaButton = document.querySelectory('cta.cta-text button')
-const ctaImg = document.querySelector('.cta img')
-const mainContent = document.querySelector('section.main-content')
-const contact = document.querySelector('section.contact')
+const banner = document.querySelector('#middle-img');
+banner.setAttribute('src', siteContent['main-content']['middle-img-src']);
 
-// Task 2b:
-// Update the HTML with the JSON data
+// nav section
 
 
+const links = document.querySelectorAll("header nav a");
+links.forEach((link, index) => link.textContent = siteContent.nav[`nav-item-${index + 1}`]);
 
 
 
@@ -68,7 +63,4 @@ const contact = document.querySelector('section.contact')
 // while(i < links.length){
 //   links[i].textContent=siteContent.nav[`nav-item-${i + 1}`];
 //    i++;
-// }
-// for(let i = 0; i < links.length; i++){
-//   links[i].textContent = siteContent.nav[`nav-item-${i + 1}`];
 // }
